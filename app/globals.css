@@ -1779,4 +1779,47 @@ textarea,
       background-color: #e8e8e5;
     }
   }
+
+  .dark .phone-portfolio {
+    background: #0b0f19;
+    color: #f0f6fc;
+  }
+  .dark .mobile-portfolio-header {
+    background: #0b0f19;
+  }
+  .dark .mobile-portfolio-brand {
+    color: #f0f6fc;
+  }
+  .dark .mobile-portfolio-menu-button {
+    color: #38bdf8;
+  }
+  .dark .mobile-portfolio-menu {
+    background: #0b0f19;
+  }
+  .dark .mobile-menu-profile p:first-of-type {
+    color: #f0f6fc;
+  }
+  .dark .mobile-menu-profile p,
+  .dark .mobile-menu-profile p span {
+    color: #94a3b8;
+  }
+  .dark .mobile-menu-body nav {
+    border-top-color: #1e293b;
+  }
+  .dark .mobile-menu-body nav a {
+    border-bottom-color: #1e293b;
+    color: #f0f6fc;
+  }
+  .dark .mobile-menu-body nav a span:first-child {
+    color: #38bdf8;
+  }
+  .dark .mobile-menu-body nav a[aria-current="page"] {
+    color: #64748b;
+  }
+  .dark .mobile-menu-body nav a[aria-current="page"] span:first-child {
+    color: #64748b;
+  }
+  .dark .phone-display-name {
+    color: #f0f6fc;
+  }
 }

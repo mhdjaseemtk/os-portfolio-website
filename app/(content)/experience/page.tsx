@@ -8,7 +8,7 @@ import { loadContent } from "../../lib/content/server";
 export const metadata = pageMetadata({
   title: "Experience",
   description:
-    "Work history of Mohammed Javad — roles at Bytsolv and Devxtra, and the products shipped in each one.",
+    "Professional and freelance development experience of Muhammad Jaseem, and the applications built.",
   path: "/experience",
 });
 

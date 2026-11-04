@@ -21,6 +21,7 @@ type Command = {
 const files: Record<string, (context: CommandContext) => React.ReactNode> = {
   "about.txt": ({ content }) => content.profile.summary,
   "skills.txt": (context) => commands.skills.run([], context),
+  "education.txt": (context) => commands.education.run([], context),
   "contact.txt": (context) => commands.contact.run([], context),
 };
 
@@ -37,6 +38,14 @@ const openTargets: Record<
     label: "Projects",
     open: ({ openApp }) => openApp("finder", "projects"),
   },
+  education: {
+    label: "Education",
+    open: ({ openApp }) => openApp("notes", "education"),
+  },
+  skills: {
+    label: "Skills",
+    open: ({ openApp }) => openApp("notes", "skills"),
+  },
   contributions: {
     label: "Open Source",
     open: ({ openApp }) => openApp("finder", "contributions"),
@@ -44,6 +53,7 @@ const openTargets: Record<
   notes: { label: "Notes", open: ({ openApp }) => openApp("notes") },
   safari: { label: "Safari", open: ({ openApp }) => openApp("safari") },
   mail: { label: "Mail", open: ({ openApp }) => openApp("mail") },
+  contact: { label: "Contact", open: ({ openApp }) => openApp("mail") },
   settings: {
     label: "System Settings",
     open: ({ openApp }) => openApp("settings"),
@@ -170,16 +180,54 @@ export const commands: Record<string, Command> = {
       </div>
     ),
   },
+  education: {
+    description: "education and qualifications",
+    run: (_, { content: { education } }) => (
+      <div className="space-y-1.5">
+        {education && education.length > 0 ? (
+          education.map((edu) => (
+            <div key={edu.id}>
+              <div>
+                <Accent>{edu.degree}</Accent> - {edu.institution}{" "}
+                <span className="text-neutral-500">
+                  ({edu.start} – {edu.end ?? "Present"})
+                </span>
+              </div>
+              {edu.description && (
+                <div className="pl-3 text-neutral-400">
+                  • {edu.description}
+                </div>
+              )}
+            </div>
+          ))
+        ) : (
+          <div>
+            <Accent>Bachelor of Computer Applications (BCA)</Accent> - Manipal University Jaipur{" "}
+            <span className="text-neutral-500">(2025 – Present)</span>
+          </div>
+        )}
+        <div className="mt-1 text-neutral-500">
+          Try `open education` to view details in Notes.
+        </div>
+      </div>
+    ),
+  },
   awards: {
     description: "honors and awards",
     run: (_, { content: { awards } }) => (
       <div>
-        {awards.map((award) => (
-          <div key={award.title}>
-            <Accent>{award.title}</Accent> - {award.event}{" "}
-            <span className="text-neutral-500">({award.date})</span>
+        {awards.length > 0 ? (
+          awards.map((award) => (
+            <div key={award.title}>
+              <Accent>{award.title}</Accent> - {award.event}{" "}
+              <span className="text-neutral-500">({award.date})</span>
+            </div>
+          ))
+        ) : (
+          <div className="text-neutral-400">
+            No awards listed. Check `education` or `projects`.
           </div>
-        ))}
+        )}
       </div>
     ),
   },
@@ -225,6 +273,7 @@ export const commands: Record<string, Command> = {
         ))}
         <span>CV.pdf</span>
         <span className="text-blue-400 font-bold">experience</span>
+        <span className="text-blue-400 font-bold">education</span>
         <span className="text-blue-400 font-bold">projects</span>
         <span className="text-blue-400 font-bold">contributions</span>
       </div>
@@ -239,6 +288,7 @@ export const commands: Record<string, Command> = {
       if (
         clean === "projects" ||
         clean === "experience" ||
+        clean === "education" ||
         clean === "contributions"
       )
         return `cat: ${clean}: Is a directory`;

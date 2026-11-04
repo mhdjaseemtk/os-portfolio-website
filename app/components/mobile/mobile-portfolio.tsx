@@ -27,7 +27,7 @@ export default function MobilePortfolio({ profile }: { profile: Profile }) {
               }}
             >
               <Image
-                src="/photo_2026-11-04_13-32-43.jpg"
+                src="/jaseem-portrait.jpg"
                 alt={profile.name}
                 fill
                 priority

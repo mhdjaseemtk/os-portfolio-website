@@ -1,6 +1,6 @@
 import localContent from "../../../data/portfolio.json";
 
-const fallbackSiteUrl = "https://javade.in";
+const fallbackSiteUrl = "https://jaseem.work";
 
 /** Canonical origin, without a trailing slash. */
 export const SITE_URL = (

@@ -136,6 +136,21 @@ export const buildFileEntries = ({
     info: { subtitle: "Contact", description: profile.summary, tags: [] },
   };
 
+  const education: FileEntry = {
+    id: "education",
+    name: "Education",
+    kind: "Note",
+    icon: icons.notes,
+    canTrash: true,
+    canRename: true,
+    open: { type: "app", app: "notes", payload: "education" },
+    info: {
+      subtitle: "BCA · Manipal University Jaipur",
+      description: "Bachelor of Computer Applications (2025 – Present)",
+      tags: [],
+    },
+  };
+
   const experienceEntries = experiences.flatMap<FileEntry>((experience) => [
     {
       id: experience.id,
@@ -208,6 +223,7 @@ export const buildFileEntries = ({
   return {
     cv,
     about,
+    education,
     experiences: experienceEntries,
     projects: projectEntries,
     contributions: contributions.map<FileEntry>((contribution) => ({
@@ -277,8 +293,9 @@ export const listLocation = (
     case "desktop":
       return visible([
         entries.about,
-        folderEntry("experience", username),
         folderEntry("projects", username),
+        folderEntry("experience", username),
+        entries.education,
         folderEntry("contributions", username),
         entries.cv,
       ]);
@@ -295,6 +312,7 @@ export const listLocation = (
       return [
         entries.cv,
         entries.about,
+        entries.education,
         ...entries.experiences,
         ...entries.projects,
         ...entries.contributions,

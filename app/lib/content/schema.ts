@@ -98,6 +98,18 @@ export const portfolioSchema = z.object({
       })
     )
     .default([]),
+  education: z
+    .array(
+      z.object({
+        id: z.string(),
+        degree: z.string(),
+        institution: z.string(),
+        start: z.string(),
+        end: z.string().optional(),
+        description: z.string().optional(),
+      })
+    )
+    .default([]),
   awards: z
     .array(
       z.object({
@@ -147,6 +159,7 @@ export type Experience = PortfolioContent["experiences"][number];
 export type ExperienceProject = z.infer<typeof experienceProjectSchema>;
 export type Project = PortfolioContent["projects"][number];
 export type CaseStudy = z.infer<typeof caseStudySchema>;
+export type Education = PortfolioContent["education"][number];
 export type Award = PortfolioContent["awards"][number];
 export type Wallpaper = PortfolioContent["system"]["wallpapers"][number];
 

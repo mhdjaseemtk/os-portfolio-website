@@ -2,8 +2,6 @@
 
 import React from "react";
 import { useContent } from "../../../context/content-context";
-import { parseYearMonth } from "../../../lib/content/dates";
-import { formatDuration } from "../../../lib/utils";
 import { useWindows } from "../../../context/window-context";
 import { useOpenTarget } from "../../../hooks/use-open-file";
 import Symbol from "../../symbol";
@@ -11,11 +9,10 @@ import Avatar from "../../avatar";
 import { Toolbar } from "../../window/toolbar";
 
 const About: React.FC = () => {
-  const { profile, experiences } = useContent();
+  const { profile } = useContent();
   const { links } = profile;
   const openTarget = useOpenTarget();
   const { openApp } = useWindows();
-  const current = experiences.find((experience) => !experience.end);
 
   const actions = [
     {
@@ -45,12 +42,15 @@ const About: React.FC = () => {
   ];
 
   const fields = [
-    { label: "work", value: current?.company ?? "Open to work" },
+    { label: "role", value: profile.role },
+    { label: "location", value: "Perinthalmanna, Malappuram, Kerala, India" },
     {
-      label: "experience",
-      value: formatDuration(parseYearMonth(profile.careerStart)),
+      label: "education",
+      value: "BCA · Manipal University Jaipur (2025 – Present)",
     },
+    { label: "work", value: "Professional & Freelance Full Stack Development" },
     { label: "focus", value: profile.focus.join(", ") },
+    { label: "website", href: links.website },
     { label: "email", value: profile.email, href: `mailto:${profile.email}` },
     { label: "GitHub", href: links.github },
     { label: "LinkedIn", href: links.linkedin },
@@ -64,7 +64,7 @@ const About: React.FC = () => {
     }));
 
   return (
-    <div className="h-full flex flex-col bg-white dark:bg-[#282025]">
+    <div className="h-full flex flex-col bg-white dark:bg-[#131722]">
       <Toolbar hasControls />
       <div className="flex-grow overflow-y-auto px-4 md:px-8 pb-8">
         <div className="flex flex-col items-center text-center">

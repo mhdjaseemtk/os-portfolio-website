@@ -1,121 +1,111 @@
 {
   "site": {
-    "title": "Mohammed Javad — Software Developer",
-    "description": "Software developer in Kochi, India. Projects, engineering case studies, and work experience — from database schema to polished UI."
+    "title": "Muhammad Jaseem — Full Stack Developer",
+    "description": "Full Stack Developer based in Perinthalmanna, Malappuram, Kerala, India — building modern, scalable, and user-friendly web applications."
   },
   "profile": {
-    "name": "Mohammed Javad",
+    "name": "Muhammad Jaseem",
     "initials": "MJ",
-    "username": "javaadde",
-    "role": "Software Developer",
-    "summary": "Software Developer based in Kochi, India — building fast, expressive web products end-to-end from database schema to polished UI.",
+    "username": "mhdjaseemtk",
+    "role": "Full Stack Developer",
+    "summary": "Full Stack Developer based in Perinthalmanna, Malappuram, Kerala, India — building modern, scalable, and user-friendly web applications.",
     "intro": [
-      "I started programming in higher secondary school with HTML, CSS, and JavaScript, then built a foundation in C/C++ and core OOP concepts in Java before committing to software development.",
-      "That path led through a MERN stack apprenticeship at Devxtra into a software developer role at Bytsolv, where I've gone from learning fundamentals to independently shipping production applications. I enjoy building end-to-end — from database schema to polished UI — and I'm currently expanding into AI-assisted developer tooling and mobile development with React Native."
+      "I am a passionate Full Stack Developer specializing in building modern, scalable, and user-friendly web applications.",
+      "My primary focus is the MERN stack, Next.js, TypeScript, backend architecture, API development, and database management.",
+      "I enjoy solving real-world problems, exploring emerging technologies, building products, and experimenting with IoT projects. My long-term goal is to build innovative technology products and launch my own technology startup."
     ],
     "focus": [
+      "MERN Stack",
       "Next.js",
       "TypeScript",
-      "React",
-      "Node.js",
-      "Hono",
+      "FastAPI",
+      "Backend Architecture",
       "PostgreSQL"
     ],
-    "careerStart": "2026-06",
-    "email": "javade.work@gmail.com",
+    "careerStart": "2024-01",
+    "email": "mhdjaseemtk@gmail.com",
     "cv": "/CV.pdf",
     "links": {
-      "website": "https://javade.in",
-      "github": "https://github.com/javaadde",
-      "linkedin": "https://linkedin.com/in/javaadde"
+      "website": "https://jaseem.work/",
+      "github": "https://github.com/mhdjaseemtk",
+      "linkedin": "https://www.linkedin.com/in/mhdjaseemtk/"
     }
   },
   "experiences": [
     {
-      "id": "bytsolv",
-      "company": "Bytsolv",
-      "role": "Software Developer",
-      "start": "2026-06",
-      "description": "Independently designed and built roughly 90% of Papr.work v1 — a financial paperwork tracking product for early-stage startups — taking a product concept from database schema and system architecture through to a shipped, live application with React 19, TanStack Router/Query, Tailwind CSS, shadcn/ui, Hono, Drizzle ORM, and PostgreSQL. Also contributed full-stack features to SmileOS, a SaaS platform for dental clinics used by 5,000+ practices across Australia, and remain.fit.",
+      "id": "full-stack-dev",
+      "company": "Full Stack Development",
+      "role": "Full Stack Developer",
+      "start": "2024-01",
+      "description": "Professional and freelance development experience building modern, scalable, and user-friendly web applications. Focused on backend architecture, robust REST APIs, high-performance database management, and responsive frontend interfaces.",
       "projects": [
         {
-          "id": "papr",
-          "name": "Papr",
-          "type": "Shipped Product",
+          "id": "crm-platform",
+          "name": "CRM Platform",
+          "type": "Enterprise CRM",
           "role": "Full-Stack Development",
-          "description": "Financial paperwork, tracked — ledger, invoices, expense tracking, and PDF storage for early-stage startups and small companies without an accountant. Built with React 19, TanStack Router/Query, Hono, Drizzle ORM, and PostgreSQL.",
-          "tags": ["Web", "React", "Hono", "PostgreSQL"],
-          "link": "https://papr.work/",
+          "description": "Enterprise CRM application featuring lead management, contacts, accounts, opportunities, tasks, and automated workflow management.",
+          "tags": ["FastAPI", "React", "PostgreSQL", "Alembic"],
           "caseStudy": {
-            "problem": "Small companies without an accountant still have to track a ledger, invoices, expenses, salaries, payments and the PDFs behind them. Papr.work is that product: one place for financial paperwork, spanning a web app, a mobile app, an admin portal and employee self-service.",
-            "role": "Primary engineer on v1 — database design, system architecture, the Hono API, the React 19 web app, the React Native/Expo mobile app, and the admin and employee portals. Delivered roughly 90% of v1 as the sole engineer, merging 24+ pull requests in about a month, all through senior code review.",
-            "architecture": "A Hono API over PostgreSQL through Drizzle ORM, with Zod request validation and Argon2 password hashing. The React 19 web app and the React Native/Expo mobile app share TypeScript contracts and validation. A Model Context Protocol server with OAuth authorization exposes financial documents, payments, ledger queries and employee self-service to AI clients.",
+            "problem": "Enterprises struggle with fragmented client records, lead leaks, and disjointed team follow-ups without a cohesive customer management platform.",
+            "role": "Architected and implemented the full-stack CRM system using FastAPI and React, structuring the relational database with PostgreSQL and Alembic migrations.",
+            "architecture": "High-performance FastAPI REST backend with asynchronous SQL operations, PostgreSQL database with versioned Alembic migrations, and modular React state management.",
             "challenges": [
-              "Closed a security issue by moving document previews into a sandboxed iframe.",
-              "Built a reusable terms-template system for invoices and quotations, plus custom document templates.",
-              "Implemented a forgot-password flow alongside Argon2-based authentication.",
-              "Kept the web and mobile clients on the same TypeScript contracts and validation, so invoices, expenses, salaries and payments render identically on both."
+              "Designed normalized relational schemas handling complex relationships across leads, accounts, contacts, and opportunities.",
+              "Implemented transactional workflow triggers and task assignments with audit trails.",
+              "Built intuitive search and filtering interfaces for real-time sales pipeline visibility."
             ],
             "outcomes": [
-              "Papr.work v1 is live at papr.work.",
-              "One backend serves the web app, mobile app, admin portal and employee self-service portals for payslips, payments, profiles and leave requests.",
-              "AI clients can work with Papr.work data through the MCP server, authorised with OAuth."
+              "Full visibility into lead pipelines from prospecting to deal closure.",
+              "Strict schema integrity with automated database migrations.",
+              "High-throughput REST API with automated validation and typed schemas."
             ]
           }
         },
         {
-          "id": "smileos",
-          "name": "SmileOS",
-          "type": "Contributed Product",
-          "role": "Frontend & Feature Engineering",
-          "description": "Complete growth operating system for dental clinics used by 5,000+ practices across Australia — automated patient communications, AI-driven enquiry actions, marketing pipelines, and practice analytics.",
-          "tags": ["Web", "Next.js", "Hono", "PostgreSQL"],
-          "link": "https://www.smileos.online/",
+          "id": "healix",
+          "name": "Healix E-commerce",
+          "type": "Full-Stack Application",
+          "role": "Full-Stack Engineering",
+          "description": "Full-stack e-commerce application with product catalog management, secure user authentication, shopping cart workflows, and admin dashboard.",
+          "tags": ["React", "Node.js", "Express", "MongoDB", "MERN Stack"],
+          "github": "https://github.com/mhdjaseemtk/Healix",
           "caseStudy": {
-            "role": "Full-stack feature work on a Next.js, Hono and Drizzle/PostgreSQL stack, shipped through senior code review.",
-            "architecture": "Next.js front end, Hono API, and Drizzle ORM over PostgreSQL.",
+            "problem": "Modern commerce needs responsive storefront discovery, instant shopping cart synchronization, and administrative inventory oversight.",
+            "role": "Built the complete full-stack MERN application including authentication, product catalog CRUD, shopping cart state management, and the admin dashboard.",
+            "architecture": "React client with modular UI components, Express.js and Node.js REST API layer, and MongoDB document database using Mongoose schema modeling.",
+            "challenges": [
+              "Implemented secure token-based user authentication and role-based authorization for administrative controls.",
+              "Engineered robust cart state handling and inventory validation.",
+              "Constructed administrative dashboards for real-time product listing and order tracking."
+            ],
             "outcomes": [
-              "Automated patient communications, AI-driven enquiry actions, marketing pipelines and practice analytics in one platform.",
-              "Used by dental practices across Australia."
+              "Seamless customer shopping experience from discovery to cart management.",
+              "Centralized admin interface for inventory and order management.",
+              "Open-source repository structured with clean code separation."
             ]
           }
         },
         {
-          "id": "remain-fit",
-          "name": "remain.fit",
-          "type": "Contributed Product",
-          "role": "Frontend & Web Engineering",
-          "description": "Small, single-purpose tools for the hard part of fitness — fasting, weight, streaks, and hydration with one account and a quiet design language.",
-          "tags": ["Web", "Next.js"],
-          "link": "https://remain.fit/"
-        }
-      ]
-    },
-    {
-      "id": "devxtra",
-      "company": "Devxtra",
-      "role": "Frontend & MERN Stack Developer",
-      "start": "2025-08",
-      "end": "2026-05",
-      "description": "Completed a structured 8-month MERN stack apprenticeship and creative web engineering role with weekly mentor reviews under experienced industry engineers. Built and shipped Hayon, a full-stack social media planning and analytics dashboard, on AWS EC2/S3.",
-      "projects": [
-        {
-          "id": "hayon",
-          "name": "Hayon",
-          "type": "Shipped Product",
+          "id": "venvision",
+          "name": "VenVision Jewellery E-commerce",
+          "type": "Jewellery E-commerce",
           "role": "Full-Stack Development",
-          "description": "Built a full-stack social media planning and analytics dashboard with AI caption suggestions, analytics visualizations, and cloud deployment.",
-          "tags": ["Web", "Next.js", "Node.js", "MongoDB"],
-          "link": "https://hayon.site",
-          "github": "https://github.com/javaadde/hayon",
+          "description": "Jewellery e-commerce platform with B2B business registration, verification workflows, product management, and admin interfaces.",
+          "tags": ["React", "TypeScript", "Node.js", "MongoDB"],
           "caseStudy": {
-            "role": "Built the dashboard end to end: a Zod-validated post scheduler, analytics visualisations, and Google Gemini AI caption suggestions, deployed on AWS EC2 with S3 for media storage.",
-            "architecture": "Next.js with shadcn/ui on the client, a Node.js/Express API, MongoDB for storage, RabbitMQ for background work, and AWS EC2/S3 for hosting and media.",
+            "problem": "B2B jewellery marketplaces require verified business registrations, merchant approvals, and specialized product catalog management.",
+            "role": "Developed the end-to-end web application with React, Node.js, TypeScript, and MongoDB, handling merchant verification and admin approval workflows.",
+            "architecture": "TypeScript-powered Node.js services with MongoDB document storage, typed React frontend interfaces, and structured business registration flows.",
+            "challenges": [
+              "Implemented multi-stage merchant registration with document uploads and admin verification checks.",
+              "Engineered responsive catalog views tailored for high-value jewellery product displays.",
+              "Maintained end-to-end TypeScript type consistency across frontend components and API contracts."
+            ],
             "outcomes": [
-              "Social media post scheduling, validated with Zod.",
-              "Analytics dashboards built with Recharts.",
-              "AI caption suggestions through Google Gemini.",
-              "Accessible, responsive Next.js and shadcn/ui interface."
+              "Streamlined business onboarding and verification workflow.",
+              "Polished, responsive user experience for wholesale jewellery discovery.",
+              "Secure admin tools for merchant credential approval."
             ]
           }
         }
@@ -124,126 +114,111 @@
   ],
   "projects": [
     {
-      "id": "haruru",
-      "name": "Haruru",
-      "company": "Rust Desktop App · Disk Usage & Cleanup",
-      "description": "Explore disk usage through interactive sunburst charts and treemaps. Built in Rust with egui, Haruru combines duplicate-file detection, remote SSH scanning, and an AI storage advisor in a cross-platform desktop app.",
-      "tags": ["Desktop", "Rust", "egui", "Data Visualization"],
-      "link": "https://github.com/javaadde/haruru"
+      "id": "crm-platform",
+      "name": "CRM Platform",
+      "company": "Enterprise CRM Application",
+      "description": "Enterprise CRM application featuring lead management, contacts, accounts, opportunities, tasks, and automated workflow management.",
+      "tags": ["FastAPI", "React", "PostgreSQL", "Alembic"]
     },
     {
-      "id": "evolf",
-      "name": "Evolf",
-      "company": "Hardware Tooling · Linux Mouse Controls",
-      "description": "Control Evofox Phantom mouse lighting from Linux with a React-powered terminal interface and a Python HID backend. Includes automatic device detection and scriptable CLI commands for hardware whose configuration utility is Windows-only.",
-      "tags": ["CLI", "React", "Python", "Hardware"],
-      "link": "https://github.com/javaadde/evolf"
+      "id": "healix",
+      "name": "Healix E-commerce",
+      "company": "Full-Stack E-commerce Platform",
+      "description": "Full-stack e-commerce application featuring product management, secure authentication, shopping cart, and comprehensive admin dashboard.",
+      "tags": ["React", "Node.js", "Express", "MongoDB", "MERN Stack"],
+      "github": "https://github.com/mhdjaseemtk/Healix"
     },
     {
-      "id": "zaiko",
-      "name": "Zaiko",
-      "company": "Mobile App · Retail Inventory & Sales",
-      "description": "Manage a mobile shop from stock intake to sale: track individual devices by IMEI, capture product photos, verify sales, and review inventory and profit insights. Built with React Native, Expo, and Firebase, with company workspaces and archived-stock recovery.",
-      "tags": ["Mobile", "React Native", "Expo", "Firebase"],
-      "link": "https://github.com/javaadde/zaiko"
+      "id": "venvision",
+      "name": "VenVision Jewellery",
+      "company": "B2B Jewellery E-commerce",
+      "description": "Jewellery e-commerce platform with B2B business registration, verification workflows, product management, and admin interfaces.",
+      "tags": ["React", "TypeScript", "Node.js", "MongoDB"]
     },
     {
-      "id": "hayon",
-      "name": "Hayon",
-      "company": "Full-Stack Social Media Dashboard",
-      "description": "All-in-one social media planning and analytics dashboard built with Next.js (App Router), shadcn/ui, Recharts, Google Gemini AI caption suggestions, RabbitMQ, and AWS (EC2/S3).",
-      "tags": ["Web", "Next.js", "Node.js", "MongoDB"],
-      "link": "https://hayon.site",
-      "github": "https://github.com/javaadde/hayon"
+      "id": "wellnora",
+      "name": "Wellnora Hub",
+      "company": "Wellness & Counselling Platform Concept",
+      "description": "Online wellness and counselling platform concept delivering a modern web experience focused on accessible online counselling and mental health support.",
+      "tags": ["Web", "Next.js", "TypeScript", "Tailwind CSS"]
+    },
+    {
+      "id": "iot-projects",
+      "name": "IoT Projects",
+      "company": "Hardware & Software Integration",
+      "description": "Arduino and Raspberry Pi experiments and prototypes integrating physical hardware sensors, microcontrollers, and custom software control layers.",
+      "tags": ["IoT", "Arduino", "Raspberry Pi", "Hardware Integration", "Python"]
     }
   ],
   "contributions": [
     {
-      "id": "rust-cc-rs-1833",
-      "repository": "rust-lang/cc-rs",
-      "title": "Better CI for cross-compiling",
-      "number": 1833,
+      "id": "healix-oss",
+      "repository": "mhdjaseemtk/Healix",
+      "title": "Full-Stack MERN E-commerce Application",
+      "number": 1,
       "status": "Merged",
-      "description": "Expanded CI coverage for cross-compilation jobs that cannot run target binaries. These jobs now compile all Cargo test targets instead of only the default test set, catching more target-specific build failures during CI.",
-      "tags": ["Rust", "CI", "Cross-compilation"],
-      "link": "https://github.com/rust-lang/cc-rs/pull/1833"
+      "description": "Open-source full-stack e-commerce application built with React, Node.js, Express, and MongoDB featuring authentication, product catalog CRUD, and an admin dashboard.",
+      "tags": ["MERN Stack", "React", "Node.js", "MongoDB"],
+      "link": "https://github.com/mhdjaseemtk/Healix"
     }
   ],
-  "awards": [
+  "education": [
     {
-      "title": "Solo-Shipped Papr.work v1",
-      "event": "Bytsolv",
-      "date": "2026",
-      "description": "Independently designed the database schema and system architecture and shipped ~90% of Papr.work v1 to production with 24+ pull requests merged in roughly a month as the sole engineer on the build.",
-      "link": "https://papr.work/"
-    },
-    {
-      "title": "MERN Stack Apprenticeship",
-      "event": "Devxtra",
-      "date": "2025 — 2026",
-      "description": "Completed an 8-month structured full-stack engineering apprenticeship with weekly mentor reviews, shipping Hayon on AWS EC2/S3.",
-      "link": "https://hayon.site"
+      "id": "bca-manipal",
+      "degree": "Bachelor of Computer Applications (BCA)",
+      "institution": "Manipal University Jaipur",
+      "start": "2025",
+      "end": "Present",
+      "description": "Pursuing Bachelor of Computer Applications with focus on computer science principles, software engineering, web application development, and database management systems."
     }
   ],
+  "awards": [],
   "skills": {
     "Frontend": [
-      "React",
+      "HTML5",
+      "CSS3",
+      "JavaScript",
+      "React.js",
       "Next.js",
       "TypeScript",
-      "JavaScript",
       "Tailwind CSS",
-      "shadcn/ui",
-      "TanStack Router/Query",
-      "GSAP",
-      "Framer Motion",
-      "Vite"
+      "Bootstrap"
     ],
     "Backend": [
       "Node.js",
-      "Hono",
       "Express.js",
-      "REST APIs",
-      "RabbitMQ",
-      "System Design"
+      "Python",
+      "FastAPI",
+      "REST API Development"
     ],
-    "Databases & ORM": ["PostgreSQL", "Drizzle ORM", "MongoDB", "Redis", "SQL"],
-    "DevOps & Mobile": [
-      "AWS (S3/EC2)",
+    "Databases": [
+      "MongoDB",
+      "PostgreSQL",
+      "Redis",
+      "DynamoDB",
+      "Elasticsearch"
+    ],
+    "Tools & Technologies": [
+      "Git and GitHub",
       "Docker",
+      "RabbitMQ",
+      "AWS",
       "Linux",
       "Nginx",
-      "CI/CD",
-      "Git/GitHub",
-      "React Native",
-      "Expo Go",
-      "Tauri"
+      "PM2",
+      "Prisma",
+      "Alembic"
     ]
   },
   "system": {
-    "hostname": "javaadde",
-    "defaultAppearance": "light",
-    "defaultWallpaper": "geometric-frosted",
+    "hostname": "jaseem-os",
+    "defaultAppearance": "dark",
+    "defaultWallpaper": "jaseem-wallpaper",
     "wallpapers": [
       {
-        "id": "geometric",
-        "name": "Geometric",
-        "src": "/wallpapers/geometric.jpg"
-      },
-      {
-        "id": "geometric-frosted",
-        "name": "Geometric Frosted",
-        "src": "/wallpapers/geometric-frosted.jpg"
-      },
-      {
-        "id": "green-dark",
-        "name": "Green Dark",
-        "src": "/wallpapers/green-dark.png"
-      },
-      {
-        "id": "green-light",
-        "name": "Green Light",
-        "src": "/wallpapers/green-light.png",
-        "isLight": true
+        "id": "jaseem-wallpaper",
+        "name": "Jaseem Studio",
+        "src": "/wallpapers/jaseem-wallpaper.jpg"
       },
       {
         "id": "blue-dark",
@@ -266,11 +241,42 @@
         "name": "Purple Light",
         "src": "/wallpapers/purple-light.png",
         "isLight": true
+      },
+      {
+        "id": "green-dark",
+        "name": "Green Dark",
+        "src": "/wallpapers/green-dark.png"
+      },
+      {
+        "id": "green-light",
+        "name": "Green Light",
+        "src": "/wallpapers/green-light.png",
+        "isLight": true
+      },
+      {
+        "id": "geometric",
+        "name": "Geometric",
+        "src": "/wallpapers/geometric.jpg"
+      },
+      {
+        "id": "geometric-frosted",
+        "name": "Geometric Frosted",
+        "src": "/wallpapers/geometric-frosted.jpg"
+      },
+      {
+        "id": "mountains",
+        "name": "Mountains",
+        "src": "/wallpapers/mountains.jpg"
+      },
+      {
+        "id": "synthwave",
+        "name": "Synthwave",
+        "src": "/wallpapers/synthwave.jpg"
       }
     ],
     "welcome": {
-      "title": "Welcome 👋",
-      "body": "Double-click an icon to open it, or press ⌘K to search."
+      "title": "Welcome to Portfolio OS 👋",
+      "body": "Hi, I'm Muhammad Jaseem. Double-click an icon to open, or press ⌘K to search."
     }
   }
 }

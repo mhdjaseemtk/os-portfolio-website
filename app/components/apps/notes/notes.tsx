@@ -113,6 +113,7 @@ const buildNotes = ({
   skills,
   awards,
   contributions,
+  education,
 }: PortfolioContent): Note[] => [
   {
     id: "hello",
@@ -132,6 +133,15 @@ const buildNotes = ({
           <ExternalLink href={`mailto:${profile.email}`}>
             {profile.email}
           </ExternalLink>
+          {profile.links.website && (
+            <>
+              {" "}
+              or visit my portfolio at{" "}
+              <ExternalLink href={profile.links.website}>
+                {profile.links.website.replace("https://", "").replace(/\/$/, "")}
+              </ExternalLink>
+            </>
+          )}
           {profile.links.github && (
             <>
               {" "}
@@ -153,6 +163,27 @@ const buildNotes = ({
       </>
     ),
   },
+  ...(education && education.length > 0
+    ? education.map((edu) => ({
+        id: "education",
+        title: "Education",
+        date: `${edu.start} – ${edu.end ?? "Present"}`,
+        preview: `${edu.degree} · ${edu.institution}`,
+        content: (
+          <>
+            <h3 className="font-semibold text-16">{edu.degree}</h3>
+            <p className="text-neutral-500 dark:text-neutral-400">
+              {edu.institution} · {edu.start} – {edu.end ?? "Present"}
+            </p>
+            {edu.description && (
+              <p className="mt-2 text-14 leading-relaxed">
+                {edu.description}
+              </p>
+            )}
+          </>
+        ),
+      }))
+    : []),
   ...experiences.map((experience) => ({
     id: experience.id,
     title: experience.company,
@@ -258,36 +289,40 @@ const buildNotes = ({
         </p>
         <p>
           <ExternalLink href={contribution.link}>
-            View pull request on GitHub ↗
+            View repository on GitHub ↗
           </ExternalLink>
         </p>
       </>
     ),
   })),
-  {
-    id: "awards",
-    title: "Honors & Awards",
-    date: awards[0].date,
-    preview: awards.map((award) => award.title).join(", "),
-    content: (
-      <>
-        {awards.map((award) => (
-          <div key={award.title}>
-            <h3 className="font-semibold">{award.title}</h3>
-            <p className="text-neutral-500 dark:text-neutral-400">
-              {award.event} · {award.date}
-            </p>
-            <p className="mt-1">
-              {award.description}{" "}
-              {award.link && (
-                <ExternalLink href={award.link}>Read more</ExternalLink>
-              )}
-            </p>
-          </div>
-        ))}
-      </>
-    ),
-  },
+  ...(awards && awards.length > 0
+    ? [
+        {
+          id: "awards",
+          title: "Honors & Awards",
+          date: awards[0].date,
+          preview: awards.map((award) => award.title).join(", "),
+          content: (
+            <>
+              {awards.map((award) => (
+                <div key={award.title}>
+                  <h3 className="font-semibold">{award.title}</h3>
+                  <p className="text-neutral-500 dark:text-neutral-400">
+                    {award.event} · {award.date}
+                  </p>
+                  <p className="mt-1">
+                    {award.description}{" "}
+                    {award.link && (
+                      <ExternalLink href={award.link}>Read more</ExternalLink>
+                    )}
+                  </p>
+                </div>
+              ))}
+            </>
+          ),
+        },
+      ]
+    : []),
 ];
 
 const Notes: React.FC<AppProps> = ({ payload, openedAt }) => {

@@ -44,13 +44,13 @@ const Desktop: React.FC = () => {
   );
 
   const entries = useMemo(() => {
-    const { cv, about } = buildFileEntries(content);
+    const { cv, about, education } = buildFileEntries(content);
     return [
-      folderEntry("experience", content.profile.username),
-      folderEntry("projects", content.profile.username),
-      folderEntry("contributions", content.profile.username),
-      cv,
       about,
+      folderEntry("projects", content.profile.username),
+      folderEntry("experience", content.profile.username),
+      education,
+      cv,
     ];
   }, [content]);
 

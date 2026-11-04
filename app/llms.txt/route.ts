@@ -16,7 +16,7 @@ export async function GET() {
   const lines: string[] = [
     `# ${profile.name} — Developer Portfolio`,
     "",
-    `> The official portfolio of ${profile.name}, a ${profile.role.toLowerCase()} in Kochi, India, building full-stack web and mobile products end to end.`,
+    `> The official portfolio of ${profile.name}, a ${profile.role.toLowerCase()} based in Perinthalmanna, Malappuram, Kerala, India, building modern, scalable, and user-friendly web applications.`,
     "",
     "The homepage is an interactive macOS-style desktop. Every page below serves the same portfolio as plain server-rendered HTML, for readers and assistants that do not run JavaScript.",
     "",

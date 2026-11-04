@@ -13,7 +13,7 @@ import type { Project } from "../../lib/content/schema";
 export const metadata = pageMetadata({
   title: "Projects",
   description:
-    "Engineering case studies for the web, desktop, and mobile projects built by Mohammed Javad, with stack details and links to live sites and source code.",
+    "Engineering case studies for featured web, backend, and full-stack projects built by Muhammad Jaseem, with stack details and links to source code.",
   path: "/projects",
 });
 

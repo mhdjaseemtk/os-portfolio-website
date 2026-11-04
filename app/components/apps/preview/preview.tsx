@@ -15,7 +15,7 @@ const Preview: React.FC = () => {
   };
 
   return (
-    <div className="h-full flex flex-col bg-white dark:bg-[#282025]">
+    <div className="h-full flex flex-col bg-white dark:bg-[#131722]">
       <Toolbar
         hasControls
         title={

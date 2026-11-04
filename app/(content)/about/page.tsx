@@ -12,13 +12,13 @@ import { loadContent } from "../../lib/content/server";
 export const metadata = pageMetadata({
   title: "About",
   description:
-    "Background, focus areas, and technical skills of Mohammed Javad, a software developer in Kochi, India.",
+    "Background, focus areas, technical skills, and education of Muhammad Jaseem, a Full Stack Developer based in Perinthalmanna, Malappuram, Kerala, India.",
   path: "/about",
 });
 
 export default async function AboutPage() {
   const content = await loadContent();
-  const { profile, skills, experiences } = content;
+  const { profile, skills, experiences, education } = content;
   const current = experiences.find((experience) => !experience.end);
 
   return (
@@ -59,6 +59,28 @@ export default async function AboutPage() {
         </p>
       </Section>
 
+      {education && education.length > 0 && (
+        <Section title="Education">
+          <ul className="space-y-4">
+            {education.map((edu) => (
+              <li key={edu.id} className="max-w-2xl">
+                <p className="text-15 font-medium">
+                  {edu.degree} · {edu.institution}
+                </p>
+                <p className="text-13 text-site-muted">
+                  {edu.start} – {edu.end ?? "Present"}
+                </p>
+                {edu.description && (
+                  <p className="mt-2 text-15 text-site-muted">
+                    {edu.description}
+                  </p>
+                )}
+              </li>
+            ))}
+          </ul>
+        </Section>
+      )}
+
       <Section title="Skills">
         <div className="space-y-6">
           {Object.entries(skills).map(([group, items]) => (
@@ -74,6 +96,13 @@ export default async function AboutPage() {
 
       <Section title="Links">
         <ul className="space-y-2 text-15">
+          {profile.links.website && (
+            <li>
+              <ExternalLink href={profile.links.website}>
+                Portfolio — {profile.links.website.replace("https://", "").replace(/\/$/, "")}
+              </ExternalLink>
+            </li>
+          )}
           <li>
             <a
               href={`mailto:${profile.email}`}
